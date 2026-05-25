@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Trufi Check</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Trufi Check</string>
+    <string name="login_subtitle">Transporte seguro y transparente</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="no_account_register">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="continue_without_account">Continuar sin cuenta (solo visualización)</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Crear Cuenta</string>
+    <string name="register_subtitle">Únete a la comunidad de Trufi Check</string>
+    <string name="full_name_hint">Nombre completo</string>
+    <string name="confirm_password_hint">Confirmar contraseña</string>
+    <string name="register_button">Crear Cuenta</string>
+    <string name="already_have_account">¿Ya tienes cuenta? Inicia sesión</string>
+
+    <!-- Home Screen -->
+    <string name="search_hint">Buscar línea o destino...</string>
+
+    <!-- Navigation Labels -->
+    <string name="login_fragment_label">Login</string>
+    <string name="register_fragment_label">Registro</string>
+    <string name="home_fragment_label">Inicio</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>
