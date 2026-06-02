@@ -38,8 +38,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@android:drawable/ic_menu_search"
-                android:tint="#99A3AD"
-                tools:ignore="ContentDescription,UseAppTint" />
+                app:tint="#99A3AD"
+                tools:ignore="ContentDescription" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -47,6 +47,7 @@
                 android:layout_marginStart="12dp"
                 android:background="@android:color/transparent"
                 android:hint="@string/search_hint"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:textColor="#2D3139"
                 android:textColorHint="#99A3AD"
@@ -54,20 +55,27 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Side Buttons -->
+    <!-- Sidebar Buttons -->
     <LinearLayout
+        android:id="@+id/sidebar_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:orientation="vertical"
-        android:gravity="center"
+        android:gravity="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_bar">
 
+        <!-- Login Button (Visible when NOT logged in) -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/btn_open_login"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:visibility="visible"
             app:cardBackgroundColor="@color/primary_blue"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp">
@@ -76,11 +84,53 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center"
                 android:src="@android:drawable/ic_menu_send"
-                android:tint="@color/white"
-                tools:ignore="ContentDescription,UseAppTint" />
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
         </androidx.cardview.widget.CardView>
 
+        <!-- User Info (Visible when logged in) -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/user_info_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <TextView
+                android:id="@+id/tv_user_name_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/user_demo"
+                android:textColor="#2D3139"
+                android:textSize="14sp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Logout Button (Visible when logged in) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_logout"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#FFEBEB"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_lock_power_off"
+                app:tint="#E53935"
+                tools:ignore="ContentDescription" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fares Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_fares"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
@@ -97,6 +147,56 @@
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
+        <!-- History Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_history"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_agenda"
+                app:tint="#5E636A"
+                tools:ignore="ContentDescription" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Profile Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_profile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:tint="#5E636A"
+                tools:ignore="ContentDescription" />
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
+
+    <!-- Complaint Floating Button (Megaphone) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="#E53935"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

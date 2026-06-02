@@ -20,7 +20,52 @@
     <string name="already_have_account">¿Ya tienes cuenta? Inicia sesión</string>
 
     <!-- Home Screen -->
-    <string name="search_hint">Buscar línea o destino...</string>
+    <string name="search_hint">Buscar línea o destino…</string>
+    <string name="user_demo">Usuario Demo</string>
+    <string name="btn_logout_desc">Cerrar sesión</string>
+    <string name="btn_fares_desc">Tarifas oficiales</string>
+    <string name="btn_history_desc">Mis reportes</string>
+    <string name="btn_profile_desc">Perfil del chofer</string>
+    <string name="btn_complaint_desc">Nueva denuncia</string>
+
+    <!-- Driver Profile Screen -->
+    <string name="driver_profile_title">Perfil del Chofer</string>
+    <string name="scan_qr">Escanear QR del Vehículo</string>
+    <string name="driver_name">Juan Pérez Mamani</string>
+    <string name="driver_line">Línea 1 - Terminal El Prado</string>
+    <string name="driver_rating">4.5 (127 reseñas)</string>
+    <string name="rate_service">Calificar Servicio</string>
+    <string name="comment_hint">Dejar un comentario voluntario…</string>
+    <string name="send_rating">Enviar Calificación</string>
+
+    <!-- My Reports Screen -->
+    <string name="my_reports_title">Mis Reportes</string>
+    <string name="sanctioned_count">3\nSancionados</string>
+    <string name="in_review_count">2\nEn Revisión</string>
+
+    <!-- Fares Screen -->
+    <string name="fares_title">Tarifas Oficiales</string>
+    <string name="fare_adult">Adulto</string>
+    <string name="fare_student">Universitario/Secundaria</string>
+    <string name="fare_school">Escolar</string>
+    <string name="fare_elderly">Adulto Mayor/Discapacidad</string>
+    <string name="fare_adult_price">3.00 Bs</string>
+    <string name="fare_student_price">2.00 Bs</string>
+    <string name="fare_school_price">2.00 Bs</string>
+    <string name="fare_elderly_price">2.40 Bs</string>
+    <string name="fare_note">Nota Importante: Estas tarifas son establecidas por el…</string>
+
+    <!-- Complaint Screen -->
+    <string name="new_complaint_title">Nueva Denuncia</string>
+    <string name="plate_hint">Ej: 1234 ABC</string>
+    <string name="complaint_type_label">Tipo de Queja *</string>
+    <string name="complaint_excessive_fare">Cobro Excesivo</string>
+    <string name="complaint_bad_treatment">Mal Trato</string>
+    <string name="complaint_route_deviation">Desvío de Ruta</string>
+    <string name="complaint_bad_odor">Mal Olor</string>
+    <string name="additional_details_label">Detalles Adicionales (Opcional)</string>
+    <string name="details_hint">Describe lo ocurrido…</string>
+    <string name="attach_photo">Adjuntar Foto/Evidencia</string>
 
     <!-- Navigation Labels -->
     <string name="login_fragment_label">Login</string>

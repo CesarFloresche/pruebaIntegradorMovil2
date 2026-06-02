@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_fares"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        app:title="@string/fares_title"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_fares">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Adult Fare -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/icon_adult" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_myplaces" android:tint="@color/primary_blue" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/icon_adult" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:text="@string/fare_adult" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="@string/fare_adult_price" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Student Fare -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/icon_student" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_edit" android:tint="@color/primary_green" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/icon_student" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:text="@string/fare_student" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="@string/fare_student_price" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- School Fare -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/icon_school" android:layout_width="40dp" android:layout_height="40dp" android:src="@android:drawable/ic_menu_compass" android:tint="#FFC107" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toEndOf="@id/icon_school" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:text="@string/fare_school" android:textSize="18sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="@string/fare_school_price" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/black" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

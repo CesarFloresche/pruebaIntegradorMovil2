@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586951615561",
+    "project_id": "trufi-check",
+    "storage_bucket": "trufi-check.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586951615561:android:64ed4ecfce2f12bcf10b98",
+        "android_client_info": {
+          "package_name": "com.example.pruebaproyefctoso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACO0BfT8p5-tWcpFAH7N_8tIx61nVTvng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

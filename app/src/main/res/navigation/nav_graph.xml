@@ -3,34 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.pruebaproyefctoso.HomeFragment"
+        android:label="@string/home_fragment_label"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_FaresFragment"
+            app:destination="@id/FaresFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ReportsFragment"
+            app:destination="@id/ReportsFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_DriverProfileFragment"
+            app:destination="@id/DriverProfileFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_ComplaintFragment"
+            app:destination="@id/ComplaintFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.pruebaproyefctoso.FirstFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment" />
+            app:destination="@id/HomeFragment"
+            app:popUpTo="@id/HomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.pruebaproyefctoso.SecondFragment"
         android:label="@string/register_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.example.pruebaproyefctoso.HomeFragment"
-        android:label="@string/home_fragment_label"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/FaresFragment"
+        android:name="com.example.pruebaproyefctoso.FaresFragment"
+        android:label="@string/fares_title"
+        tools:layout="@layout/fragment_fares" />
+
+    <fragment
+        android:id="@+id/ReportsFragment"
+        android:name="com.example.pruebaproyefctoso.ReportsFragment"
+        android:label="@string/my_reports_title"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/DriverProfileFragment"
+        android:name="com.example.pruebaproyefctoso.DriverProfileFragment"
+        android:label="@string/driver_profile_title"
+        tools:layout="@layout/fragment_driver_profile" />
+
+    <fragment
+        android:id="@+id/ComplaintFragment"
+        android:name="com.example.pruebaproyefctoso.ComplaintFragment"
+        android:label="@string/new_complaint_title"
+        tools:layout="@layout/fragment_complaint" />
+
 </navigation>
