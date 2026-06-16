@@ -21,6 +21,8 @@
 
     <!-- Home Screen -->
     <string name="search_hint">Buscar línea o destino…</string>
+    <string name="origin_hint">Seleccione origen</string>
+    <string name="destination_hint">Seleccione destino</string>
     <string name="user_demo">Usuario Demo</string>
     <string name="btn_logout_desc">Cerrar sesión</string>
     <string name="btn_fares_desc">Tarifas oficiales</string>
@@ -74,4 +76,6 @@
 
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="google_maps_key">TU_API_KEY_AQUI</string>
 </resources>

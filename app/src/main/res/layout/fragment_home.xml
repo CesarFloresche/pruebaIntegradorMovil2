@@ -7,51 +7,94 @@
     android:background="#F5F7FA"
     tools:context=".HomeFragment">
 
-    <!-- Mockup Map Placeholder -->
-    <View
-        android:id="@+id/map_placeholder"
+    <!-- OpenStreetMap MapView -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent" />
+        android:layout_height="match_parent" />
 
-    <!-- Search Bar -->
+    <!-- Search Box (Origin and Destination) -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/search_bar"
+        android:id="@+id/search_container"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:cardCornerRadius="28dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_search"
-                app:tint="#99A3AD"
-                tools:ignore="ContentDescription" />
-
-            <EditText
+            <!-- Origin -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:background="@android:color/transparent"
-                android:hint="@string/search_hint"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textColor="#2D3139"
-                android:textColorHint="#99A3AD"
-                android:textSize="16sp" />
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/presence_online"
+                    app:tint="@color/primary_blue"
+                    tools:ignore="ContentDescription" />
+
+                <EditText
+                    android:id="@+id/et_origin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/origin_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColor="#2D3139"
+                    android:textColorHint="#99A3AD"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="#E5E7EB" />
+
+            <!-- Destination -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/presence_busy"
+                    app:tint="#E53935"
+                    tools:ignore="ContentDescription" />
+
+                <EditText
+                    android:id="@+id/et_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/destination_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textColor="#2D3139"
+                    android:textColorHint="#99A3AD"
+                    android:textSize="15sp" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -65,9 +108,9 @@
         android:orientation="vertical"
         android:gravity="end"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_bar">
+        app:layout_constraintTop_toBottomOf="@id/search_container">
 
-        <!-- Login Button (Visible when NOT logged in) -->
+        <!-- Login Button -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_open_login"
             android:layout_width="48dp"
@@ -75,7 +118,6 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:visibility="visible"
             app:cardBackgroundColor="@color/primary_blue"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp">
@@ -88,7 +130,7 @@
                 tools:ignore="ContentDescription" />
         </androidx.cardview.widget.CardView>
 
-        <!-- User Info (Visible when logged in) -->
+        <!-- User Info -->
         <androidx.cardview.widget.CardView
             android:id="@+id/user_info_card"
             android:layout_width="wrap_content"
@@ -109,7 +151,7 @@
                 android:textSize="14sp" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Logout Button (Visible when logged in) -->
+        <!-- Logout Button -->
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_logout"
             android:layout_width="48dp"
@@ -185,7 +227,7 @@
 
     </LinearLayout>
 
-    <!-- Complaint Floating Button (Megaphone) -->
+    <!-- Complaint Floating Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_complaint"
         android:layout_width="wrap_content"
